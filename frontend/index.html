@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>☁️ Task Manager Cloud</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>☁️ Task Manager Cloud</h1>
+
+  <!-- Блок авторизации -->
+  <div id="auth">
+    <input id="username" placeholder="Логин">
+    <input id="password" placeholder="Пароль" type="password">
+    <br>
+    <button onclick="register()">Регистрация</button>
+    <button onclick="login()">Вход</button>
+  </div>
+
+  <!-- Основное приложение -->
+  <div id="app" style="display:none;">
+    <h2>Мои задачи</h2>
+    <input id="taskTitle" placeholder="Введите задачу...">
+    <button onclick="createTask()">Добавить</button>
+
+    <ul id="tasksList"></ul>
+
+    <button id="logoutBtn" onclick="logout()">🚪 Выйти</button>
+  </div>
+
+  <footer>
+    <p>Разработано в рамках проекта СРОП-4 | 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
