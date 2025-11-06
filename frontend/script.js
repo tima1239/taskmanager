@@ -1,11 +1,12 @@
-// 💡 Если ты тестируешь локально:
-// const API_URL = "http://127.0.0.1:8000";
+// 💡 Для тестирования локально (FastAPI локально на 127.0.0.1:10000):
+// const API_URL = "http://127.0.0.1:10000";
 
-// ⚙️ После деплоя на Render укажи здесь свой URL:
+// ⚙️ После деплоя на Render укажи здесь URL своего сервиса:
 const API_URL = "https://task-manager-cloud.onrender.com";
 
 let token = "";
 
+// Регистрация пользователя
 async function register() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -27,6 +28,7 @@ async function register() {
   }
 }
 
+// Вход пользователя
 async function login() {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -48,6 +50,7 @@ async function login() {
   loadTasks();
 }
 
+// Загрузка задач
 async function loadTasks() {
   const res = await fetch(`${API_URL}/tasks/`, {
     headers: { "Authorization": `Bearer ${token}` }
@@ -72,6 +75,7 @@ async function loadTasks() {
   });
 }
 
+// Создание задачи
 async function createTask() {
   const title = document.getElementById("taskTitle").value.trim();
   if (!title) {
@@ -92,6 +96,7 @@ async function createTask() {
   }
 }
 
+// Удаление задачи
 async function deleteTask(id) {
   const res = await fetch(`${API_URL}/tasks/${id}`, {
     method: "DELETE",
@@ -105,6 +110,7 @@ async function deleteTask(id) {
   }
 }
 
+// Выход пользователя
 function logout() {
   token = "";
   document.getElementById("auth").style.display = "block";
