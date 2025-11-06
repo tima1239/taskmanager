@@ -2,7 +2,8 @@
 // const API_URL = "http://127.0.0.1:10000";
 
 // ⚙️ После деплоя на Render укажи здесь URL своего сервиса:
-const API_URL = "https://task-manager-cloud.onrender.com";
+const API_URL = "https://taskmanager-6pkp.onrender.com";
+
 
 let token = "";
 
